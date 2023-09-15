@@ -1,6 +1,4 @@
 class User < ApplicationRecord
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
@@ -14,4 +12,7 @@ class User < ApplicationRecord
   validates :role, presence: true
   validates :profile_picture, attached: true, content_type: ['image/jpg', 'image/gif', 'image/png', 'image/webp'],
                               size: { less_than: 50.megabytes, message: 'is too large' }
+
+  # Roles
+  enum role: { user: 'user', admin: 'admin' }
 end
