@@ -72,4 +72,6 @@ end
 
 gem 'simple_form'
 
+gem 'active_storage_validations'
+
 gem 'devise'
