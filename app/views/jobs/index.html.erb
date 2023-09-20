@@ -1,6 +1,6 @@
-<p style="color: green"><%= notice %></p>
-
 <h1>Jobs</h1>
+
+<p style="color: green"><%= notice %></p>
 
 <div id="jobs">
   <% @jobs.each do |job| %>
@@ -11,4 +11,7 @@
   <% end %>
 </div>
 
-<%= link_to "New job", new_job_path %>
+<!-- Solo se muestra si el usuario es admin -->
+<% if current_user && current_user.role == 'admin'%>
+  <%= link_to "New job", new_job_path %>
+<% end %>
