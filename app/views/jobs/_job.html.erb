@@ -1,12 +1,10 @@
 <div id="<%= dom_id job %>">
-  <p>
-    <strong>Job title:</strong>
+  <h2 class="">
     <%= job.job_title %>
-  </p>
-
+  </h2>
+  <hr>
   <p>
-    <strong>Description:</strong>
-    <%= job.description %>
+    <%= simple_format(job.description) %>
   </p>
 
 </div>

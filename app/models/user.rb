@@ -5,6 +5,7 @@ class User < ApplicationRecord
   # Relaciones
   has_one_attached :profile_picture
   has_many :jobs, dependent: :destroy
+  has_many :job_applications
 
   # Validaciones
   validates :name, presence: true, uniqueness: true, length: { minimum: 2, maximum: 50 }

@@ -1,5 +1,5 @@
 class JobsController < ApplicationController
-  before_action :set_job, only: %i[show edit update destroy]
+  before_action :set_job, only: %i[show edit update destroy show]
   before_action :authenticate_admin!, only: %i[new create edit update destroy]
 
   # GET /jobs or /jobs.json
@@ -8,7 +8,10 @@ class JobsController < ApplicationController
   end
 
   # GET /jobs/1 or /jobs/1.json
-  def show; end
+  def show
+    @job_application = JobApplication.new
+    @job_applications = @job.job_applications
+  end
 
   # GET /jobs/new
   def new
@@ -21,6 +24,7 @@ class JobsController < ApplicationController
   # POST /jobs or /jobs.json
   def create
     @job = Job.new(job_params)
+    @job.user = current_user
 
     respond_to do |format|
       if @job.save

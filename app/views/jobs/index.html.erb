@@ -1,4 +1,10 @@
-<h1>Jobs</h1>
+<div class="d-flex flex-row justify-content-between align-items-center mt-3">
+  <h1>Ofertas Laborales</h1>
+  <!-- Solo se muestra si el usuario es admin -->
+  <% if current_user && current_user.role == 'admin'%>
+    <%= link_to "Crear Oferta Laboral", new_job_path, class: "btn btn-primary btn-sm" %>
+  <% end %>
+</div>
 
 <p style="color: green"><%= notice %></p>
 <% if flash[:error].present? %>
@@ -11,12 +17,7 @@
   <% @jobs.each do |job| %>
     <%= render job %>
     <p>
-      <%= link_to "Show this job", job %>
+      <%= link_to "Ver más", job %>
     </p>
   <% end %>
 </div>
-
-<!-- Solo se muestra si el usuario es admin -->
-<% if current_user && current_user.role == 'admin'%>
-  <%= link_to "New job", new_job_path %>
-<% end %>
