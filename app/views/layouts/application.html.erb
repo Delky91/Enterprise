@@ -12,6 +12,9 @@
   </head>
 
   <body>
-    <%= yield %>
+    <%= render 'shared/navbar'%>
+    <main class="container">
+      <%= yield %>
+    </main>
   </body>
 </html>
