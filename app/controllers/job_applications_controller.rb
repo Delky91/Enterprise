@@ -15,11 +15,11 @@ class JobApplicationsController < ApplicationController
     @job_application.user = current_user
 
     if @job_application.save
-      # Envía una notificación al administrador aquí si es necesario
       flash[:notice] = 'Tu postulación ha sido enviada con éxito.'
       redirect_to @job
     else
-      render 'new'
+      flash[:notice] = 'Ya te has postulado a este trabajo con anterioridad'
+      redirect_to root_path
     end
   end
 

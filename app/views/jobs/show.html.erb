@@ -4,13 +4,13 @@
 
 <!-- Links -->
 <div class="d-flex gap-4 align-items-center my-5">
-  <%= link_to "Editar oferta", edit_job_path(@job) %>
+  <%= link_to "Editar oferta", edit_job_path(@job), class: "btn btn-sm btn-outline-primary" %>
   <%= button_to "Eliminar oferta", @job, class: "btn btn-sm btn-outline-danger", method: :delete %>
 </div>
 <hr class="mb-5">
 
 <!-- Formulario de postulación -->
-<% if current_user && current_user.role == 'admin' %>
+<% if current_user && current_user.role != 'admin' %>
   <div class="my-4">
     <h2>Postula</h2>
     <%= simple_form_for [@job, @job_application] do |f| %>
@@ -18,24 +18,27 @@
       <%= f.button :submit, "Application", class: "btn btn-outline-primary" %>
     <% end %>
   </div>
-  <hr>
+  <hr class="mt-5">
 <% end %>
 
 <!-- Postulaciones -->
-<div class="">
+<div class="mt-5">
   <% if @job_applications.present? %>
     <h2>Postulaciones:</h2>
+
     <% @job_applications.each do |job_application| %>
-      <div class="my-2">
-        <% if job_application.user.profile_picture.present? %>
-          <%= image_tag job_application.user.profile_picture, class: "profileWraper rounded-5" %>
-        <% end %>
-        <%= job_application.user.name %> se ha postulado.
-        <p>
-          <%= simple_format(job_application.message) %>
-        </p>
+      <div class="my-2 border p-2 rounded-2 application shadow-sm">
+        <div class="d-flex gap-2 align-items-center my-2">
+          <% if job_application.user.profile_picture.present? %>
+            <%= image_tag job_application.user.profile_picture, class: "profileWraper rounded-5" %>
+          <% end %>
+          <p class="mb-0"><%= job_application.user.name %> se ha postulado.</p>
+        </div>
+        <hr>
+        <%= simple_format(job_application.message) %>
       </div>
     <% end %>
+
   <% else %>
     <p>No hay postulaciones para este trabajo.</p>
   <% end %>

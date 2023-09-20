@@ -17,3 +17,7 @@
   width: 40px;
   height: 40px;
  }
+
+ .application{
+  background: hsla(0, 0%, 100%, 0.6);
+ }
