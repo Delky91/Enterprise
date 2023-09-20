@@ -1,6 +1,11 @@
 <h1>Jobs</h1>
 
 <p style="color: green"><%= notice %></p>
+<% if flash[:error].present? %>
+  <div class="alert alert-danger">
+    <%= flash[:error] %>
+  </div>
+<% end %>
 
 <div id="jobs">
   <% @jobs.each do |job| %>
