@@ -1,4 +1,5 @@
 class JobsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_job, only: %i[show edit update destroy show]
   before_action :authenticate_admin!, only: %i[new create edit update destroy]
 

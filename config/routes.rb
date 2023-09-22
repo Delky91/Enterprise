@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'home/index'
   devise_for :users, controllers: {
     registrations: 'users/registrations'
   }
@@ -6,5 +7,5 @@ Rails.application.routes.draw do
     resources :job_applications, only: %i[new create]
   end
 
-  root 'jobs#index'
+  root 'home#index'
 end
