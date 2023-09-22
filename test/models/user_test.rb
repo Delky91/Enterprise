@@ -13,6 +13,9 @@
 #  profile_picture        :string
 #  name                   :string
 #  role                   :string           not null
+#  phone_number           :string
+#  department             :string
+#  position               :string
 #
 require "test_helper"
 

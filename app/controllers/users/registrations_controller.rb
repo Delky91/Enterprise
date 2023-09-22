@@ -2,12 +2,18 @@
 
 class Users::RegistrationsController < Devise::RegistrationsController
   before_action :configure_sign_up_params, only: [:create]
+  before_action :configure_account_update_params, only: [:update]
   # Solo los admin pueden crear cuentas
   before_action :authenticate_user!, :redirect_unless_admin, only: %i[create new]
   # Linea para para evitar el user already log in
   skip_before_action :require_no_authentication
 
   private
+
+  def user_params
+    params.require(:user).permit(:email, :name, :profile_picture, :phone_number, :department, :position, :password,
+                                 :password_confirmation, :current_password)
+  end
 
   def redirect_unless_admin
     return if current_user && current_user.role == 'admin'
@@ -31,6 +37,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def configure_account_update_params
     devise_parameter_sanitizer.permit(:account_update,
                                       keys: %i[name email password password_confirmation current_password
-                                               profile_picture])
+                                               profile_picture phone_number department position ])
   end
 end
