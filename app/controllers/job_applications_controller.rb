@@ -14,6 +14,11 @@ class JobApplicationsController < ApplicationController
     @job_applications = @job.job_applications
   end
 
+  def show_user
+    @job_application = JobApplication.find(params[:id])
+    @user = @job_application.user
+  end
+
   def create
     @job_application = @job.job_applications.new(job_application_params)
     @job_application.user = current_user

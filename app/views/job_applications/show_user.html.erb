@@ -1,0 +1,20 @@
+<h2>Información del Postulante</h2>
+
+<div class="mt-5 px-2 row">
+  <div class="col-md-6 col-12 order-md-1 order-2">
+    <p class="fw-bold">Nombre:</p>
+    <p><%= @user.name %></p>
+    <p class="fw-bold">Email:</p>
+    <p><%= @user.email %></p>
+    <p class="fw-bold">Teléfono:</p>
+    <p><%= @user.phone_number %></p>
+    <p class="fw-bold">Departamento:</p>
+    <p><%= @user.department %></p>
+    <p class="fw-bold">Cargo:</p>
+    <p><%= @user.position %></p>
+  </div>
+  <div class="col-md-6 overflow-hidden order-1 order-md-2 mb-4 text-center">
+    <%= image_tag @user.profile_picture, class: "w-75" if @user.profile_picture.attached? %>
+  </div>
+
+</div>
