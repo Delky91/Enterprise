@@ -1,7 +1,7 @@
 <div class="d-flex flex-row justify-content-between align-items-center mt-3">
   <h1>Ofertas Laborales</h1>
   <!-- Solo se muestra si el usuario es admin -->
-  <% if current_user && current_user.role == 'admin'%>
+  <% if current_user.role == 'admin'%>
     <%= link_to "Crear Oferta Laboral", new_job_path, class: "btn btn-primary btn-sm" %>
   <% end %>
 </div>
