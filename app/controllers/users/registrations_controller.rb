@@ -13,7 +13,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
     return if current_user && current_user.role == 'admin'
 
     flash[:error] = 'Only admins can do that'
-    redirect_to root_path
+    redirect_to jobs_path
   end
 
   # Metodo para evitar el logueo automatico de cuentas nuevas
