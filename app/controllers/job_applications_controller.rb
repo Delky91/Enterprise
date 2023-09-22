@@ -1,6 +1,10 @@
 class JobApplicationsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_job
+  before_action :set_job, only: %i[new show]
+
+  def index
+    @job_applications = current_user.job_applications
+  end
 
   def new
     @job_application = @job.job_applications.new

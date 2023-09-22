@@ -10,6 +10,10 @@
     <div class="collapse navbar-collapse justify-content-end gap-4" id="navbarSupportedContent">
       <% if user_signed_in? %>
         <%= link_to 'Trabajos', jobs_path, class: "link-body-emphasis text-decoration-none" %>
+        <!-- SI el user no es admin mostrar pestaña de postulaciones -->
+        <% if !current_user.admin?%>
+          <%= link_to 'Mis Postulaciones', job_applications_index_path, class: 'link-body-emphasis text-decoration-none' %>
+        <% end %>
       <% end %>
 
       <ul class="navbar-nav mb-2 mb-lg-0">
