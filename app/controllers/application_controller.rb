@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-  before_action :redirect_to_jobs_if_authenticated
+  before_action :redirect_to_jobs
 
   private
 
@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
   end
 
   # Si un usuario logueado trata de ir al root_path (imagen + login) es redirecionado a jobs_path
-  def redirect_to_jobs_if_authenticated
+  def redirect_to_jobs
     return unless user_signed_in? && request.path == root_path
 
     redirect_to jobs_path
