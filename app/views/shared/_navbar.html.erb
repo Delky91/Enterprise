@@ -26,6 +26,7 @@
                 <li><hr class="dropdown-divider"></li>
               <% end %>
               <li><%= button_to 'Cerrar sesión', destroy_user_session_path, class: 'dropdown-item', method: :delete %></li>
+              <li><%= link_to "Editar perfil", edit_user_registration_path, class: 'dropdown-item' %></li>
             <% else %>
               <li><%= link_to 'Iniciar sesión', new_user_session_path, class: 'dropdown-item'%></li>
             <% end %>

@@ -27,4 +27,10 @@ class Users::RegistrationsController < Devise::RegistrationsController
     devise_parameter_sanitizer.permit(:sign_up,
                                       keys: %i[name email password password_confirmation role profile_picture])
   end
+
+  def configure_account_update_params
+    devise_parameter_sanitizer.permit(:account_update,
+                                      keys: %i[name email password password_confirmation current_password
+                                               profile_picture])
+  end
 end
