@@ -1,6 +1,7 @@
 <!-- app/views/job_applications/index.html.erb -->
 
 <h1>Mis Postulaciones</h1>
+<hr>
 
 <% if @job_applications.present? %>
   <div class="row">
@@ -10,7 +11,7 @@
           <div class="card-body">
             <h5 class="card-title"><%= job_application.job.job_title %></h5>
             <p class="card-text"><%= job_application.message %></p>
-            <%= link_to 'Ver', job_path(job_application.job), class: 'btn btn-primary' %>
+            <%= link_to 'Ver Oferta', job_path(job_application.job), class: 'btn btn-outline-primary' %>
           </div>
         </div>
       </div>
