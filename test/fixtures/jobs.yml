@@ -11,9 +11,12 @@
 #
 
 one:
-  job_title: MyString
-  description: MyText
+  job_title: Job One
+  description: Job Description and Requirements
+  user: one
+  
 
 two:
-  job_title: MyString
-  description: MyText
+  job_title: Job Two
+  description: Job Two Description and Requirements
+  user: one

@@ -13,9 +13,9 @@
 one:
   user: one
   job: one
-  message: MyText
+  message: Applicant to job One
 
 two:
   user: two
   job: two
-  message: MyText
+  message: Applicant to job Two
