@@ -11,7 +11,7 @@
 #
 
 one:
-  user: one
+  user: two
   job: one
   message: Applicant to job One
 
