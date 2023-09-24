@@ -22,4 +22,10 @@
   background: hsla(0, 0%, 100%, 0.6);
  }
 
- 
+ .profile_picture_wraper{
+  max-width: 400px;
+ }
+
+.info-wraper{
+  background-color: hsla(0, 0%, 0%, 0.1);
+}
