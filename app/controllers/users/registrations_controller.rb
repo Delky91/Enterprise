@@ -4,7 +4,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   before_action :configure_sign_up_params, only: [:create]
   before_action :configure_account_update_params, only: [:update]
   # Solo los admin pueden crear cuentas
-  # before_action :authenticate_user!, :redirect_unless_admin, only: %i[create new]
+  before_action :authenticate_user!, :redirect_unless_admin, only: %i[create new]
   # Linea para para evitar el user already log in
   skip_before_action :require_no_authentication
 
