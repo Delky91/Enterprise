@@ -76,3 +76,7 @@ gem 'simple_form'
 gem 'active_storage_validations'
 
 gem 'devise'
+
+gem 'figaro'
+
+gem 'aws-sdk-s3'
