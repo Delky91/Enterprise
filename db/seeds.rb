@@ -1,20 +1,13 @@
-require 'aws-sdk-s3'
-
-Aws.config.update(
-  region: ENV['aws_bucket_region'],
-  credentials: Aws::Credentials.new(
-    ENV['aws_access_key_id'],
-    ENV['aws_secret_access_key']
-  )
-)
-
+# Descarga la imagen y luego adjúntala al usuario
 admin_user = User.create(
   name: 'Admin User',
   email: 'admin@mail.com',
   password: '123456',
   role: 'admin'
 )
+
+# Descarga la imagen y adjúntala al usuario
 admin_user.profile_picture.attach(
-  io: URI.open('https://rails-luis-bucket.s3.us-east-2.amazonaws.com/mlz596kreencfhad2aw31jvd2jva'),
-  filename: 'profile_picture.jpg'
+  io: URI.open('https://dummyimage.com/300/000/fff'),
+  filename: 'profile_picture.png'
 )
