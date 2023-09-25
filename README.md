@@ -235,12 +235,6 @@ Si seguiste los pasos hasta aquí, deberías poder ver la vista index de la apli
 
 Si tienes algún problema o sugerencia, por favor abre un problema [aquí](https://github.com/Delky91/Enterprise/issues).
 
-## Roadmap
-
-Ideas, mejoras planificadas y actualizaciones futuras
-
-para el proyecto actual.
-
 ## Versionado 📌
 
 Use [Git](https://git-scm.com) para el versionado.
