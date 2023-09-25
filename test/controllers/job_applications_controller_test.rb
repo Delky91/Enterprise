@@ -11,7 +11,7 @@ class JobApplicationsControllerTest < ActionDispatch::IntegrationTest
 
   # test probara todo el flujo desde apertura de la app, el login y la creación de una application
   test 'user flow to create a new application to a job' do
-    # Entramos a la application y acemos click en el link para iniciar session
+    # Entramos a la application y hacemos click en el link para iniciar session
     visit root_path
 
     # Verifico si estoy en la pagina de login para poder trabajar con el formulario
@@ -23,7 +23,7 @@ class JobApplicationsControllerTest < ActionDispatch::IntegrationTest
     fill_in('user_password', with: '123456')
     click_on 'Log in'
 
-    # Comprobamos que la session se inicie con exito y que estemos en la paginas de jobs
+    # Comprobamos que la session se inicie con éxito y que estemos en la paginas de jobs
     assert_text 'Signed in successfully.'
     assert current_path == jobs_path
 
