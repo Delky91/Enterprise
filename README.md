@@ -17,10 +17,12 @@ Esta página funciona principalmente mediante el uso de un CRUD para el manejo d
 ## Cuentas de prueba
 
 Cuenta administrador:
+
 - user: admin@mail.com
 - password: 123456
 
 Cuenta usuario:
+
 - user: a@mail.com
 - password: 123456
 
